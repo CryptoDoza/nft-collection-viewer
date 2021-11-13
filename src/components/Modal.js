@@ -1,6 +1,6 @@
 import React from "react";
 import { typeScale, primaryFont } from "../utils";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { Illustrations, CloseIcon } from "../assets";
 import { PrimaryButton } from "./Buttons";
 

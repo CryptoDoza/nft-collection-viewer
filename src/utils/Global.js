@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components/macro";
 import { primaryFont } from "./typography";
 import { normalize } from "polished";
 
