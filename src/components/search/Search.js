@@ -17,8 +17,12 @@ export const Search = () => {
     );
 
     const json = await res.json();
-
-    setCollection(json.collection);
+    console.log(json);
+    if (json) {
+      setCollection(json.collection);
+    } else {
+      setCollection([]);
+    }
   }
 
   return (
@@ -33,6 +37,7 @@ export const Search = () => {
       >
         <label htmlFor="contract-address">
           <input
+            required
             type="text"
             id="contract"
             value={contractAddress}
