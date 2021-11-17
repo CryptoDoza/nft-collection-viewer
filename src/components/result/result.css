@@ -1,0 +1,41 @@
+.collection {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid grey;
+  overflow: hidden;
+}
+
+.collection .background-image {
+  max-width: 100%;
+}
+
+.collection .avatar-image {
+  min-width: 100px;
+  margin-top: -50px;
+  border-radius: 50%;
+}
+
+.collection .content {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+ul {
+  display: inline-block;
+  margin: 0 0 20px 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+ul li {
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+ul li a {
+  margin: 0 10px;
+}

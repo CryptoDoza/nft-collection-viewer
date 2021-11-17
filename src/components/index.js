@@ -1,2 +1,4 @@
 export * from "./Buttons";
-export * from "./Modal";
+export * from "./card/Card";
+export * from "./search/Search";
+export * from "./result/Result";
