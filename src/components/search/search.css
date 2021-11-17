@@ -7,7 +7,9 @@
 }
 
 .search input {
-  min-width: 420px;
+  width: 100%;
+  max-width: 420px;
+  margin-bottom: 10px;
 }
 
 .search label {

@@ -21,6 +21,10 @@
   margin: 0 auto;
 }
 
+.no-collection {
+  color: #e8ba79;
+}
+
 ul {
   display: inline-block;
   margin: 0 0 20px 0;

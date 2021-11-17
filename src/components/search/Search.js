@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { PrimaryButton } from "../Buttons";
 import { Result } from "../result/Result";
 import "./search.css";
@@ -7,12 +7,11 @@ export const Search = () => {
   const [contractAddress, setContractAddress] = useState("");
   const [collection, setCollection] = useState([]);
 
-  useEffect(() => {
-    requestContract();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const requestContract = useCallback(() => {
+    getData(contractAddress);
+  }, [contractAddress]);
 
-  async function requestContract() {
-    setContractAddress();
+  async function getData(contractAddress) {
     const res = await fetch(
       `https://api.opensea.io/api/v1/asset_contract/${contractAddress}`
     );
