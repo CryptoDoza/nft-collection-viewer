@@ -9,7 +9,7 @@ export const Search = () => {
 
   useEffect(() => {
     requestContract();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function requestContract() {
     setContractAddress();
@@ -44,7 +44,6 @@ export const Search = () => {
 
         <PrimaryButton>Search</PrimaryButton>
       </form>
-
       <Result collection={collection} />
     </div>
   );
