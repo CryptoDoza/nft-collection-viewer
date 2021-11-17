@@ -5,23 +5,26 @@ import "./search.css";
 
 export const Search = () => {
   const [contractAddress, setContractAddress] = useState("");
-  const [collection, setCollection] = useState([]);
+  const [collection, setCollection] = useState({});
+  const [error, setError] = useState(false);
 
   const requestContract = useCallback(() => {
     getData(contractAddress);
   }, [contractAddress]);
 
   async function getData(contractAddress) {
-    const res = await fetch(
-      `https://api.opensea.io/api/v1/asset_contract/${contractAddress}`
-    );
+    try {
+      const res = await fetch(
+        `https://api.opensea.io/api/v1/asset_contract/${contractAddress}`
+      );
 
-    const json = await res.json();
-    console.log(json);
-    if (json) {
+      const json = await res.json();
+      console.log(json);
+      setError(false);
       setCollection(json.collection);
-    } else {
-      setCollection([]);
+    } catch (e) {
+      setError(true);
+      setCollection({});
     }
   }
 
@@ -48,7 +51,11 @@ export const Search = () => {
 
         <PrimaryButton>Search</PrimaryButton>
       </form>
-      <Result collection={collection} />
+      {error ? (
+        <p style={{ color: "red" }}>ERROR: Invalid Contract Address</p>
+      ) : (
+        <Result collection={collection} />
+      )}
     </div>
   );
 };
