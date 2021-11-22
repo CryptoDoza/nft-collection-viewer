@@ -1,13 +1,15 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs";
-import { action } from "@storybook/addon-actions";
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 import { withKnobs, boolean } from "@storybook/addon-knobs";
-import { PrimaryButton, SecondaryButton, GhostButton } from "./Buttons";
+import { action } from '@storybook/addon-actions';
+import {
+  PrimaryButton,
+  SecondaryButton,
+  GhostButton,
+} from "./Buttons";
 
-<Meta title="Buttons" component={PrimaryButton} />
+<Meta title="Design System|Buttons" component={PrimaryButton} />
 
 # Buttons
-
-Buttons are used to trigger actions within an application.
 
 ## Usage
 
@@ -19,27 +21,21 @@ Primary buttons are used as a call to action and indicate the most important act
 
 <Preview withToolbar>
   <Story name="primary">
-    <PrimaryButton
-      disabled={boolean("Disabled", false)}
-      onClick={action("button-click")}
-    >
-      Hello world
-    </PrimaryButton>
+    <PrimaryButton onClick={action('button-click')} disabled={boolean("Disabled", false)}>Hello world</PrimaryButton>
   </Story>
 </Preview>
 
 ## Secondary Buttons
 
-Primary buttons are used as a call to action and indicate the most important action on a page.
+Secondary buttons are used as a call to action and indicate the next most important action on a page.
 
 <Story name="secondary">
-  <SecondaryButton>Hello world</SecondaryButton>
+  <SecondaryButton disabled={boolean("Disabled", false)}>Hello world</SecondaryButton>
 </Story>
 
-## Tertiary Buttons
+## Ghost Buttons
 
-Primary buttons are used as a call to action and indicate the most important action on a page.
-
+Ghost buttons are used when paired with a primary button to be a secondary action.
 <Story name="ghost">
-  <GhostButton>Hello world</GhostButton>
+  <GhostButton disabled={boolean("Disabled", false)}>Hello world</GhostButton>
 </Story>
